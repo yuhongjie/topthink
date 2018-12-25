@@ -18,7 +18,13 @@
                 "type": "zip",
                 "url": "https://api.github.com/repos/zishang520/blade/zipball/dbe44f5868ef9df2f889c9f3fc5ef081e6f3da22",
                 "reference": "dbe44f5868ef9df2f889c9f3fc5ef081e6f3da22",
-                "shasum": ""
+                "shasum": "",
+                "mirrors": [
+                    {
+                        "url": "https://dl.laravel-china.org/%package%/%reference%.%type%",
+                        "preferred": true
+                    }
+                ]
             },
             "require": {
                 "php": ">=7.0.0"
@@ -58,7 +64,13 @@
                 "type": "zip",
                 "url": "https://api.github.com/repos/zishang520/think-blade/zipball/ae498e63f26808f0b9bd1c24472c753e6478e9c1",
                 "reference": "ae498e63f26808f0b9bd1c24472c753e6478e9c1",
-                "shasum": ""
+                "shasum": "",
+                "mirrors": [
+                    {
+                        "url": "https://dl.laravel-china.org/%package%/%reference%.%type%",
+                        "preferred": true
+                    }
+                ]
             },
             "require": {
                 "luoyy/blade": "^5.5",
@@ -98,7 +110,13 @@
                 "type": "zip",
                 "url": "https://api.github.com/repos/top-think/framework/zipball/88a2ab625b35e047896718db320e08375cf021da",
                 "reference": "88a2ab625b35e047896718db320e08375cf021da",
-                "shasum": ""
+                "shasum": "",
+                "mirrors": [
+                    {
+                        "url": "https://dl.laravel-china.org/%package%/%reference%.%type%",
+                        "preferred": true
+                    }
+                ]
             },
             "require": {
                 "php": ">=5.6.0",
@@ -149,7 +167,13 @@
                 "type": "zip",
                 "url": "https://api.github.com/repos/top-think/think-installer/zipball/f5400a12c60e513911aef41fe443fa6920952675",
                 "reference": "f5400a12c60e513911aef41fe443fa6920952675",
-                "shasum": ""
+                "shasum": "",
+                "mirrors": [
+                    {
+                        "url": "https://dl.laravel-china.org/%package%/%reference%.%type%",
+                        "preferred": true
+                    }
+                ]
             },
             "require": {
                 "composer-plugin-api": "^1.0"

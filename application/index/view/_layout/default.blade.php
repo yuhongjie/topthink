@@ -9,10 +9,42 @@
 	<meta name='description' content=''>
 	<meta name='keywords' content=''>
 	<title>@yield('title')--ThinkPHP 入门教程</title>
-	<link rel="stylesheet" href="">
+	<link rel="stylesheet" href="/static/bootstrap/css/bootstrap.min.css" integrity='' crossorign='anonymous'>
+	<link rel="stylesheet" href="/static/css/app.css">
 </head>
 <body>
-	<h1>{block name="content"}正文{/block}</h1>
-	test
+	<header>
+		<div>
+			<nav>
+				<div class="container">
+					<a href="">
+						Thinkphp 入门教程
+					</a>
+					<button>
+						<span>按钮</span>
+					</button>
+					<div>
+						<ul>
+							<li>
+								<a href="">主页
+									<span>(current)</span>
+								</a>
+							</li>
+							<li>
+								<a href="">帮助</a>
+							</li>
+							<li><a href="">关于</a></li>
+						</ul>
+						<a href="">注册</a>
+
+					</div>
+				</div>
+			</nav>
+		</div>
+	</header>
+	<div class="container">
+		@yield('content')
+	</div>
+	
 </body>
 </html>
