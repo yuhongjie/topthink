@@ -13,5 +13,6 @@
 </head>
 <body>
 	<h1>{block name="content"}正文{/block}</h1>
+	test
 </body>
 </html>
