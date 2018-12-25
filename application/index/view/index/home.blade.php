@@ -1,4 +1,5 @@
 @extends ('_layout/default')
+@section('title','主页')
 @section('content')
 <section>
 	<div>

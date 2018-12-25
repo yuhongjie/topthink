@@ -17,6 +17,7 @@ Route::get('think', function () {
 Route::get('', 'index/index/home');
 Route::get('/about', 'index/index/about');
 Route::get('/help', 'index/index/help');
+Route::get('/signup', 'user/auth/create');
 
 return [
 
