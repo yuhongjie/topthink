@@ -42,5 +42,5 @@ return [
     //视图基础目录(集中式)
     'view_base' => Env::get('ROOT_PATH').'resources'.DIRECTORY_SEPARATOR.'views'.DIRECTORY_SEPARATOR,
     //模板起始路径
-    'view_path' => Env::get('ROOT_PATH').'resources'.DIRECTORY_SEPARATOR.'view'.DIRECTORY_SEPARATOR,
+    'view_path' => Env::get('ROOT_PATH').'resources'.DIRECTORY_SEPARATOR.'views'.DIRECTORY_SEPARATOR,
 ];

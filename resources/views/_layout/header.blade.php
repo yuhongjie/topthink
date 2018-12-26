@@ -26,14 +26,14 @@
 						<div>
 							<ul>
 								<li>
-									<a href="{{url('index/index/home')}}">主页
+									<a href="{{url('welcome/index/home')}}">主页
 										<span>(current)</span>
 									</a>
 								</li>
 								<li>
-									<a href="{{url('index/index/help')}}">帮助</a>
+									<a href="{{url('welcome/index/help')}}">帮助</a>
 								</li>
-								<li><a href="{{url('index/index/about')}}">关于</a></li>
+								<li><a href="{{url('welcome/index/about')}}">关于</a></li>
 							</ul>
 							<a href="{{url('user/auth/create')}}">注册</a>
 						</div>
