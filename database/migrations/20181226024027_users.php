@@ -7,14 +7,18 @@ class Users extends Migrator
 {
     public function up(){
         //创建表
-        $table = $this -> table('users');
+        $table = $this->table('users');
         $table -> addColumn('name', 'string')
                -> addColumn('email', 'string')
                -> addColumn('password', 'string')
-               -> addColumn('avatar', 'string',['null' => true, 'default' => NULL, 'comment' => '用户头像'] )
-               -> addColumn('god', 'boolean', ['default' => false, 'comment' => '管理员'])
+               -> addColumn('avatar', 'string',
+                            ['null' => true, 'default' => NULL, 
+                            'comment' => '用户头像'])
+               -> addColumn('god', 'boolean', 
+                            ['default' => false, 
+                            'comment' => '管理员'])
                -> addTimestamps('create_at', 'update_at')
-               -> addColumn('email', ['unique'=> true])
+               -> addIndex('email', ['unique'=> true])
                -> addIndex('god')
                -> create();
 
@@ -44,8 +48,8 @@ class Users extends Migrator
      * Remember to call "create()" or "update()" and NOT "save()" when working
      * with the Table class.
      */
-    public function change()
-    {
+    // public function change()
+    // {
 
-    }
+    // }
 }
