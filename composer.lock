@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "ae7aad4a9e24c2ef9641f5c99a324bb9",
+    "content-hash": "1ad3e1e9628f52c5ebd7bfad498dc616",
     "packages": [
         {
             "name": "luoyy/blade",
@@ -18,13 +18,7 @@
                 "type": "zip",
                 "url": "https://api.github.com/repos/zishang520/blade/zipball/dbe44f5868ef9df2f889c9f3fc5ef081e6f3da22",
                 "reference": "dbe44f5868ef9df2f889c9f3fc5ef081e6f3da22",
-                "shasum": "",
-                "mirrors": [
-                    {
-                        "url": "https://dl.laravel-china.org/%package%/%reference%.%type%",
-                        "preferred": true
-                    }
-                ]
+                "shasum": ""
             },
             "require": {
                 "php": ">=7.0.0"
@@ -64,13 +58,7 @@
                 "type": "zip",
                 "url": "https://api.github.com/repos/zishang520/think-blade/zipball/ae498e63f26808f0b9bd1c24472c753e6478e9c1",
                 "reference": "ae498e63f26808f0b9bd1c24472c753e6478e9c1",
-                "shasum": "",
-                "mirrors": [
-                    {
-                        "url": "https://dl.laravel-china.org/%package%/%reference%.%type%",
-                        "preferred": true
-                    }
-                ]
+                "shasum": ""
             },
             "require": {
                 "luoyy/blade": "^5.5",
@@ -110,13 +98,7 @@
                 "type": "zip",
                 "url": "https://api.github.com/repos/top-think/framework/zipball/88a2ab625b35e047896718db320e08375cf021da",
                 "reference": "88a2ab625b35e047896718db320e08375cf021da",
-                "shasum": "",
-                "mirrors": [
-                    {
-                        "url": "https://dl.laravel-china.org/%package%/%reference%.%type%",
-                        "preferred": true
-                    }
-                ]
+                "shasum": ""
             },
             "require": {
                 "php": ">=5.6.0",
@@ -167,13 +149,7 @@
                 "type": "zip",
                 "url": "https://api.github.com/repos/top-think/think-installer/zipball/f5400a12c60e513911aef41fe443fa6920952675",
                 "reference": "f5400a12c60e513911aef41fe443fa6920952675",
-                "shasum": "",
-                "mirrors": [
-                    {
-                        "url": "https://dl.laravel-china.org/%package%/%reference%.%type%",
-                        "preferred": true
-                    }
-                ]
+                "shasum": ""
             },
             "require": {
                 "composer-plugin-api": "^1.0"
@@ -201,6 +177,45 @@
                 }
             ],
             "time": "2018-05-11T06:45:42+00:00"
+        },
+        {
+            "name": "topthink/think-migration",
+            "version": "v2.0.3",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/top-think/think-migration.git",
+                "reference": "70c89850ca29c2eab988c7c3475d1d5331901bb8"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/top-think/think-migration/zipball/70c89850ca29c2eab988c7c3475d1d5331901bb8",
+                "reference": "70c89850ca29c2eab988c7c3475d1d5331901bb8",
+                "shasum": ""
+            },
+            "require": {
+                "topthink/framework": "5.1.*"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-4": {
+                    "Phinx\\": "phinx/src/Phinx",
+                    "think\\migration\\": "src"
+                },
+                "files": [
+                    "src/config.php"
+                ]
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "Apache-2.0"
+            ],
+            "authors": [
+                {
+                    "name": "yunwuxin",
+                    "email": "448901948@qq.com"
+                }
+            ],
+            "time": "2017-12-31T16:32:22+00:00"
         }
     ],
     "packages-dev": [],
