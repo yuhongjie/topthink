@@ -26,9 +26,15 @@ class Auth extends Controller
      */
     public function create()
     {
-        $token = $this->request->token('__token__', 'sha1');
-        $this -> assign('token', $token);
-        return $this -> fetch();
+        if(Session::has('user')){
+            $user = Session::get('user');
+            return redirect('user/auth/read')->params(['id'=>$user->id]);
+        }else{
+            $token = $this->request->token('__token__', 'sha1');
+            $this -> assign('token', $token);
+            return $this -> fetch();
+        }
+        
     }
 
     /**
@@ -51,6 +57,7 @@ class Auth extends Controller
             // echo 'hello1';
             // return User::create($requestData);
             $user = User::create($requestData);
+            Session::set('user', $user);
             return redirect('user/auth/read')->params(['id' => $user->id]);
 
         }
@@ -75,7 +82,11 @@ class Auth extends Controller
     {
         if(Session::has('user')){
             $user = User::find($id);
-            $this->assign('user', $user);
+            $token = $this->request->token('__token__', 'sha1');
+            $this->assign([
+                'user'=> $user,
+                'token'=>$token
+            ]);
             return $this->fetch();
         }else{
             return redirect('user/session/create')->with('validate', '请先登录');
