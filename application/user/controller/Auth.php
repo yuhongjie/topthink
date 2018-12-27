@@ -5,6 +5,7 @@ namespace app\user\controller;
 use think\Controller;
 use think\Request;
 use app\user\model\User;
+use think\facade\Session;
 
 class Auth extends Controller
 {
@@ -72,9 +73,14 @@ class Auth extends Controller
      */
     public function read($id)
     {
-        $user = User::find($id);
-        $this->assign('user', $user);
-        return $this->fetch();
+        if(Session::has('user')){
+            $user = User::find($id);
+            $this->assign('user', $user);
+            return $this->fetch();
+        }else{
+            return redirect('user/session/create')->with('validate', '请先登录');
+        }
+     
     }
 
     /**

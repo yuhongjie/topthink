@@ -5,6 +5,7 @@ namespace app\user\controller;
 use think\Controller;
 use think\Request;
 use app\user\model\User;
+use think\facade\Session as SessionFacade;
 
 class Session extends Controller
 {
@@ -15,7 +16,7 @@ class Session extends Controller
      */
     public function index()
     {
-        //
+        return 'hello';
     }
 
     /**
@@ -41,13 +42,19 @@ class Session extends Controller
     {
         $result = $this->validate($request->post(), 'app\user\validate\Session');
         if(true!== $result){
+            //失败的话
             return redirect('user\session\create')->with('validate',$result);
         }else{
-           $user = User::where('email' => $request->email)-find();
+            //成功的话
+            //查找用户
+           $user = User::where('email', $request->email)->find();
            if($user !== null && password_verify($request->password, $user->password)){
-                return 'password is valid'
+                // return 'password is valid'
+                SessionFacade::set('user', $user);
+                return redirect('user/auth/read')->params(['id'=>$user->id]);
            }else{
-                return 'Invalid password'
+                // return 'Invalid password'
+                return redirect('user/session/create')->with('validate', '邮箱或密码错误！');
            }
         }
     }

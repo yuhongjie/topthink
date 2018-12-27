@@ -22,5 +22,7 @@ class User extends Model
     public function setEmailAttr($value){
     	return strtolower($value);
     }
+    //字符过滤
+    protected $field = ['name', 'email', 'password', 'avatar'];
 }
 
