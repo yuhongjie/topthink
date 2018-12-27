@@ -9,6 +9,14 @@ use think\facade\Session;
 
 class Auth extends Controller
 {
+    protected $middleware = [
+        'Auth'=>[
+            'except'=>[
+                'create',
+                'save'
+            ]
+        ],
+    ];
     /**
      * 显示资源列表
      *
@@ -26,14 +34,16 @@ class Auth extends Controller
      */
     public function create()
     {
-        if(Session::has('user')){
-            $user = Session::get('user');
-            return redirect('user/auth/read')->params(['id'=>$user->id]);
-        }else{
-            $token = $this->request->token('__token__', 'sha1');
-            $this -> assign('token', $token);
-            return $this -> fetch();
-        }
+        // if(Session::has('user')){
+        //     $user = Session::get('user');
+        //     return redirect('user/auth/read')->params(['id'=>$user->id]);
+        // }else{
+        //     $token = $this->request->token('__token__', 'sha1');
+        //     $this -> assign('token', $token);
+        //     return $this -> fetch();
+        // }
+        //中间件
+        return $this->fetch();
         
     }
 
@@ -80,17 +90,25 @@ class Auth extends Controller
      */
     public function read($id)
     {
-        if(Session::has('user')){
-            $user = User::find($id);
-            $token = $this->request->token('__token__', 'sha1');
-            $this->assign([
-                'user'=> $user,
-                'token'=>$token
-            ]);
-            return $this->fetch();
-        }else{
-            return redirect('user/session/create')->with('validate', '请先登录');
-        }
+        // if(Session::has('user')){
+        //     $user = User::find($id);
+        //     $token = $this->request->token('__token__', 'sha1');
+        //     $this->assign([
+        //         'user'=> $user,
+        //         'token'=>$token
+        //     ]);
+        //     return $this->fetch();
+        // }else{
+        //     return redirect('user/session/create')->with('validate', '请先登录');
+        // }
+        //中间件
+        $user = User::find($id);
+        $this->assign([
+            'user'=> $user
+
+        ]);
+        return $this->fetch();
+
      
     }
 

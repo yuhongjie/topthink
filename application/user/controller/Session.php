@@ -10,6 +10,16 @@ use think\facade\Session as SessionFacade;
 
 class Session extends Controller
 {
+    protected $middleware = [
+
+        'Auth'=>[
+
+            'except'=>[
+                'create',
+                'save'
+            ]
+        ],
+    ];
     /**
      * 显示资源列表
      *
@@ -27,15 +37,23 @@ class Session extends Controller
      */
     public function create()
     {   
+        //中间件
+        return $this->fetch();
+        //中间件之前
         // $user = Session::get('user');
-        if (SessionFacade::has('user')) {
-            $user = Session::get('user');
-            return redirect('user/auth/read')->params(['id' => $user->id]);
-        } else {
-            $token = $this->request->token('__token__', 'sha1');
-            $this->assign('token', $token);
-            return $this->fetch();
-        }
+        // if (SessionFacade::has('user')) {
+        //     $user = Session::get('user');
+        //     return redirect('user/auth/read')->params(['id' => $user->id]);
+        // } else {
+        //     $token = $this->request->token('__token__', 'sha1');
+        //     $this->assign('token', $token);
+        //     return $this->fetch();
+        // }
+        // if(session('?user')){
+        //     return $next($request)
+        // }eles{
+        //     return redirect('user/session/create')->with('validate', '请先登录');
+        // }
 
     }
 
@@ -108,11 +126,14 @@ class Session extends Controller
      */
     public function delete($id)
     {
-        if (SessionFacade::has('user') && $id === SessionFacade::get('user.id')) {
-            SessionFacade::delete('user');
-            return redirect('user/session/create')->with('validate','您已退出');
-        } else {
-            return '非法请求';
-        }
+        // if (SessionFacade::has('user') && $id === SessionFacade::get('user.id')) {
+        //     SessionFacade::delete('user');
+        //     return redirect('user/session/create')->with('validate','您已退出');
+        // } else {
+        //     return '非法请求';
+        // }
+        //中间件
+        session('user',null);
+        return redirect('user/session/create')->with('validate','您已退出');
     }
 }

@@ -43,19 +43,6 @@
               {{ session('user.name') }}
             </a> -->
             <div class="dropdown">
-              <button class="btn btn-default dropdown-toggle" type="button" id="dropdownMenu1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
-                Dropdown
-                <span class="caret"></span>
-              </button>
-              <ul class="dropdown-menu" aria-labelledby="dropdownMenu1">
-                <li><a href="#">Action</a></li>
-                <li><a href="#">Another action</a></li>
-                <li><a href="#">Something else here</a></li>
-                <li role="separator" class="divider"></li>
-                <li><a href="#">Separated link</a></li>
-              </ul>
-            </div>
-            <div class="dropdown">
               <button class="btn btn-secondary dropdown-toggle"
                       type="button"
                       id="dropdownMenuButton"
@@ -71,9 +58,7 @@
                 <a class="dropdown-item">
                   <form action="{{ url('user/session/delete', ['id' => session('user.id')]) }}"
                         method="POST">
-                    <input type="hidden"
-                            name="__token__"
-                            value="{{ $token }}" />
+                        @php echo token() @endphp
                     <button class="btn btn-block"
                             type="submit"
                             name="button">退出</button>
